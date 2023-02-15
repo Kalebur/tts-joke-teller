@@ -46,7 +46,8 @@ main {
   transform: scale(0.98);
 }
 
-#joke-btn:disabled {
+#joke-btn:disabled,
+#joke-btn:disabled:hover {
   cursor: default;
   filter: brightness(30%);
 }
