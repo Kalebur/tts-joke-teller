@@ -1,4 +1,4 @@
-const VK = "";
+const VK = "aa7243799a92467a967970c8a18b9e36";
 const btn = document.querySelector("#joke-btn");
 const audioElement = document.querySelector("#audio");
 
