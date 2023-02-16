@@ -6,6 +6,7 @@ function toggleButton() {
   btn.disabled = !btn.disabled;
 }
 // VoiceRSS Javascript SDK
+// Just downloaded from the VoiceRSS site
 const VoiceRSS = {
   speech: function (e) {
     this._validate(e), this._request(e);
@@ -125,6 +126,7 @@ function getJokeAudio(text, voice = "Amy") {
 // Poll API to get new joke
 async function getJokes() {
   toggleButton();
+  btn.innerText = "Thinking...";
   const apiUrl =
     "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
   try {
@@ -137,8 +139,9 @@ async function getJokes() {
       joke = data.joke;
     }
     getJokeAudio(joke);
+    btn.innerText = "Tell Me A Joke!";
   } catch (err) {
-    console.log("Aw, shucks!", err);
+    console.log("Something screwed up!", err);
   }
 }
 
